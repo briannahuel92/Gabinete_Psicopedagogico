@@ -24,11 +24,45 @@
 
     <main class="Contacto">
         <section class="FormularioContacto">
+
+            <h3>Formulario de contacto</h3>
+            <p>Para consultas, complete los campos y nos estaremos comunicando con usted para brindarle toda la informacion,
+                Muchas Gracias!</p>
+
             <form action="">
-                <h3>Formulario de contacto</h3>
-                <p>Para consultas, complete los campos y les estaremos enviando un correo con toda la información.
-                    Muchas Gracias!</p>
+                <div class="formularioInputs">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
+    
+                    <br>
+    
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su E-mail" required>
+    
+                    <br>
+    
+                    <label for="asunto">Asunto de la consulta:</label>
+                    <select name="asunto" id="asunto" required>
+                        <option value="1">Servicios</option>
+                        <option value="2">Actividades</option>
+                        <option value="3">Profesionales</option>
+                        <option value="4">Postulaciones</option>
+                    </select>
+                </div>
+
+                <br>
+
+                <label for="comentarios">Descripcion:</label>
+                <br>
+                <textarea class = "comentariosContacto" name="comentarios" id="comentarios" required></textarea>
+
+                <br>
+                <br>
+
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
             </form>
+
         </section>
 
         <section class="DirMapaContacto">
@@ -47,21 +81,22 @@
             <div class="DirMapaContactoNumeros">
                     <p class="DescMapaContacto">Telefono: 4555-4555</p>
                     <div>
-                        <img class="LogoWhassap" src="./img/whatsapp.png" alt="">
-                        <p class="DescCelularContacto">15-4355-3454</p>
+                        <a href="https://wa.me/+5491125668806" target="_blank"><img class="LogoWhassap" src="./img/whatsapp.png" alt=""></a>
+                        
+                        <p class="DescCelularContacto">15-2566-8806</p>
                     </div>
             </div>
 
         </section>
 
         <section class="RedSocialesContacto">
-            <h3 class="DescRedSocContacto">Visita nuestras redes sociales!</h3>
+            <h3 class="DescRedSocContacto">Visitanos en nuestras redes sociales!</h3>
             <div class="ContenedorImgContacto">
                 <a href="https://www.facebook.com/hospgarrahan/?locale=es_LA" target="_blank"><img class="imgRedSocContacto" src="./img/facebook.png" alt=""></a>
                 <a href="https://www.instagram.com/hospgarrahan/?hl=es-la" target="_blank"><img class="imgRedSocContacto" src="./img/instagram.png" alt=""></a>
                 <a href="https://twitter.com/HospGarrahan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img class="imgRedSocContacto" src="./img/gorjeo.png" alt=""></a>
             </div>
-
+            
         </section>
 
     </main>

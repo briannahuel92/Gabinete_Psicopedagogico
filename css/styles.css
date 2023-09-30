@@ -2,7 +2,7 @@
 
 /*Background*/
 
-body{
+body {
     background-color: #D5F1EF;
 }
 
@@ -16,86 +16,105 @@ body{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    main.Contacto{
-        display:grid;
+    main.Contacto {
+        display: grid;
         grid-template: 1 fr / auto auto auto;
-        grid-template-areas: "FormularioContacto" 
-                             "DirMapaContacto"
-                             "RedSocialesContacto";
-    }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    main.Contacto{
-        display:grid;
-        grid-template: 1 fr / auto auto auto;
-        grid-template-areas: "FormularioContacto" 
-                             "DirMapaContacto"
-                             "RedSocialesContacto";
+        grid-template-areas: "DirMapaContacto"
+            "FormularioContacto"
+            "RedSocialesContacto";
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    main.Contacto{
-        display:grid;
-        grid-template: 1 fr 300px / 50% 50%;
-        grid-template-areas: "FormularioContacto DirMapaContacto"
-                             "RedSocialesContacto RedSocialesContacto";
+@media only screen and (min-width: 600px) {
+    main.Contacto {
+        display: grid;
+        grid-template: 1 fr / auto auto auto;
+        grid-template-areas: "DirMapaContacto"
+            "FormularioContacto"
+            "RedSocialesContacto";
     }
 }
 
-section.FormularioContacto{
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main.Contacto {
+        display: grid;
+        grid-template: 1 fr 300px / 1fr 1fr;
+        grid-template-areas: "FormularioContacto DirMapaContacto"
+            "RedSocialesContacto RedSocialesContacto";
+    }
+}
+
+/*Formulario*/
+
+section.FormularioContacto {
     grid-area: FormularioContacto;
-    padding:  10px;
+    padding: 10px;
 }
 
-section.DirMapaContacto{
+.formularioInputs label {
+    margin: 3px;
+    display: inline-block;
+    width: 150px;
+}
+
+.comentariosContacto{
+    width: 100%;
+    height: 150px;
+    max-width: 700px;
+
+}
+/*Seccion de mapas, telefonos y direccion*/
+
+section.DirMapaContacto {
     grid-area: DirMapaContacto;
-    padding:  10px;
+    padding: 10px;
 }
 
-.DirMapaContactoNumeros{
+.DirMapaContactoNumeros {
     display: flex;
-    gap:20px;
+    gap: 20px;
     justify-content: center;
 }
 
-.DescCelularContacto{
+.DescCelularContacto {
     display: inline-block;
     font-weight: bold;
 }
-p.DescMapaContacto{
+
+p.DescMapaContacto {
     font-weight: bold;
     gap: 25px;
     text-align: center;
 }
 
-.ContenedorMapaContacto{
-text-align: center;
+.ContenedorMapaContacto {
+    text-align: center;
 }
 
-img.LogoWhassap{
+img.LogoWhassap {
     height: 1.5em;
     width: 1.5em;
 }
-section.RedSocialesContacto{
+
+/*seccion de redes sociales*/
+
+section.RedSocialesContacto {
     grid-area: RedSocialesContacto;
 }
 
-h3.DescRedSocContacto{
+h3.DescRedSocContacto {
     text-align: center;
 }
-div.ContenedorImgContacto{
+
+div.ContenedorImgContacto {
     display: flex;
     justify-content: center;
     gap: 25px;
 }
 
-.imgRedSocContacto{
+.imgRedSocContacto {
     height: 3em;
     width: 3em;
 }
-
-
