@@ -67,7 +67,7 @@ section.FormularioContacto {
 .formularioInputs label {
     margin: 3px;
     display: inline-block;
-    width: 150px;
+    width: 170px;
 }
 
 .comentariosContacto{
@@ -78,7 +78,7 @@ section.FormularioContacto {
 }
 
 .comboAsunto{
-    width: 166px;
+    width: 175px;
 }
 /*Seccion de mapas, telefonos y direccion*/
 
