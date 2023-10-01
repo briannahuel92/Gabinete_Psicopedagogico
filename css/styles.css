@@ -65,6 +65,10 @@ section.FormularioContacto {
     max-width: 700px;
 
 }
+
+.comboAsunto{
+    width: 170px;
+}
 /*Seccion de mapas, telefonos y direccion*/
 
 section.DirMapaContacto {
