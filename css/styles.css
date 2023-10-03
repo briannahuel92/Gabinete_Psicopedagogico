@@ -1,13 +1,18 @@
 /*ESTILOS GENERALES*/
 
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
 }
+
+* {
+    font-family: 'Arial', sans-serif;
+}
+
 /*Background*/
 
 body {
-    background-color: #D5F1EF;
+    background-color: rgb(104, 82, 49);
 }
 
 /*Header*/
@@ -23,7 +28,114 @@ footer {
 
 /*ESTILOS PAGINA PRINCIPAL*/
 
+.carousel-item {
+    height: 80vh;
+    min-height: 300px;
+}
+
+.carousel-caption {
+    bottom: 200px;
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 30, 82, 0.327);
+    z-index: 1;
+
+}
+
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #000;
+}
+
+.w-100 {
+    height: 100vh;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+}
+
+.services .card-body i {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .carousel-item {
+        height: 70vh;
+    }
+
+    .w-100 {
+        height: 70vh;
+    }
+
+    .carousel-caption {
+        bottom: 125px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 17pxs;
+    }
+
+    .carousel-caption a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .carousel-caption p {
+        width: 100%;
+        line-height: 1.5;
+        font-size: 12px;
+    }
+
+    .about-text {
+        padding-top: 50px;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+}
+
 /*ESTILOS PAGINA DE CONTACTO*/
+
+
+body.bodyContacto{
+    color:white;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -70,17 +182,21 @@ section.FormularioContacto {
     width: 170px;
 }
 
-.comentariosContacto{
+.comentariosContacto {
     width: 100%;
     height: 150px;
     max-width: 700px;
 
 }
 
-.comboAsunto{
-    width: 175px;
+.comboAsunto {
+    width: 201px;
 }
+
 /*Seccion de mapas, telefonos y direccion*/
+.TituloUbicacion{
+    text-align: center;
+}
 
 section.DirMapaContacto {
     grid-area: DirMapaContacto;
@@ -105,6 +221,9 @@ p.DescMapaContacto {
     margin-top: 9px;
 }
 
+.DescWhassap{
+    margin-top: 9px;
+}
 .ContenedorMapaContacto {
     text-align: center;
 }
