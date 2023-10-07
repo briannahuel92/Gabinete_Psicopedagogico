@@ -20,10 +20,100 @@ body {
 /*Footer*/
 
 footer {
-    height: 200px;
-    width: 100%;
+    grid-area: footer;
     background-color: #24262B;
     margin-top: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+    color:#8f949b;
+    font-weight: bold;
+}
+
+footer a{
+    color:#8f949b;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+footer h6{
+    color:#8f949b;
+    font-weight: bold;
+    border-bottom: 2px solid #8f949b;
+    display:inline-block;
+}
+
+footer h6.footerTitPagina{
+    color:#cdd5df;
+    font-weight: bold;
+    border-bottom: 0px solid #8f949b;
+}
+footer ul{
+    padding: 0px;
+}
+
+footer a{
+    transition: all .3s ease;
+}
+footer a:hover{
+color: aquamarine;
+padding-left: 8px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    footer {
+        display: grid;
+        grid-template: 1fr auto / 1fr 1fr;
+        grid-template-areas: 
+        "footerMenu footerContacto"
+        "footerPagRedes footerPagRedes";
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+    footer {
+        display: grid;
+        grid-template: 1fr auto / 1fr 1fr;
+        grid-template-areas: 
+        "footerMenu footerContacto"
+        "footerPagRedes footerPagRedes";
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    footer {
+        display: grid;
+        grid-template: 1fr auto / 1fr 1fr;
+        grid-template-areas: 
+        "footerMenu footerContacto"
+        "footerPagRedes footerPagRedes";
+    }
+}
+
+.footerMenu{
+    grid-area: footerMenu;
+    text-align: center;
+}
+
+.footerMenu ul{
+    list-style: none;
+}
+.footerContacto{
+    grid-area: footerContacto;
+    text-align: center;
+}
+
+.footerContacto p{
+    margin: 0 auto;
+}
+
+.footerPagRedes{
+    grid-area: footerPagRedes;
+    text-align: center;
+    margin-top:15px;
+    padding: 0px;
 }
 
 /*ESTILOS PAGINA PRINCIPAL*/
@@ -141,10 +231,12 @@ body.bodyContacto{
 @media only screen and (max-width: 600px) {
     main.Contacto {
         display: grid;
-        grid-template: 1 fr / auto auto auto;
-        grid-template-areas: "DirMapaContacto"
-            "FormularioContacto"
-            "RedSocialesContacto";
+        grid-template: 1 fr / auto auto auto auto;
+        grid-template-areas: 
+        "DirMapaContacto"
+        "FormularioContacto"
+        "RedSocialesContacto"
+        "footer";
     }
 }
 
@@ -152,10 +244,11 @@ body.bodyContacto{
 @media only screen and (min-width: 600px) {
     main.Contacto {
         display: grid;
-        grid-template: 1 fr / auto auto auto;
-        grid-template-areas: "DirMapaContacto"
-            "FormularioContacto"
-            "RedSocialesContacto";
+        grid-template: 1fr auto auto/ 1fr 1fr;
+        grid-template-areas: 
+        "FormularioContacto DirMapaContacto"
+        "RedSocialesContacto RedSocialesContacto"
+        "footer footer";
     }
 }
 
@@ -163,9 +256,11 @@ body.bodyContacto{
 @media only screen and (min-width: 992px) {
     main.Contacto {
         display: grid;
-        grid-template: 1 fr 300px / 1fr 1fr;
-        grid-template-areas: "FormularioContacto DirMapaContacto"
-            "RedSocialesContacto RedSocialesContacto";
+        grid-template: 1fr auto auto/ 1fr 1fr;
+        grid-template-areas: 
+        "FormularioContacto DirMapaContacto"
+        "RedSocialesContacto RedSocialesContacto"
+        "footer footer";
     }
 }
 
@@ -173,7 +268,7 @@ body.bodyContacto{
 
 section.FormularioContacto {
     grid-area: FormularioContacto;
-    padding: 10px;
+    padding: 25px;
 }
 
 .formularioInputs label {
@@ -200,7 +295,7 @@ section.FormularioContacto {
 
 section.DirMapaContacto {
     grid-area: DirMapaContacto;
-    padding: 10px;
+    padding: 25px;
 }
 
 .DirMapaContactoNumeros {
@@ -237,6 +332,7 @@ img.LogoWhassap {
 
 section.RedSocialesContacto {
     grid-area: RedSocialesContacto;
+    padding: 25px;
 }
 
 h3.DescRedSocContacto {
