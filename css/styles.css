@@ -19,6 +19,13 @@ body {
 
 /*Footer*/
 
+.iconoConsultorioFooter
+{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
 footer {
     grid-area: footer;
     background-color: #24262B;
@@ -117,6 +124,11 @@ padding-left: 8px;
 }
 
 /*ESTILOS PAGINA PRINCIPAL*/
+.iconoConsultorio{
+    width: 100px;
+    height: 100px;
+}
+
 
 .carousel-item {
     height: 80vh;
@@ -129,7 +141,7 @@ padding-left: 8px;
 }
 
 .carousel-caption h5 {
-    font-size: 45px;
+    font-size: 2em;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 25px;
