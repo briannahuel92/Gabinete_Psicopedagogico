@@ -124,9 +124,21 @@ padding-left: 8px;
 }
 
 /*ESTILOS PAGINA PRINCIPAL*/
+
+.logoytitulo{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+
+.logoytitulo h5{
+    color:white;
+}
+
 .iconoConsultorio{
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 }
 
 
