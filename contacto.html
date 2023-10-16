@@ -66,17 +66,18 @@
             <form action="">
                 <div class="formularioInputs">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
 
                     <br>
 
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Ingrese su E-mail" required>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su E-mail">
 
                     <br>
 
                     <label for="asunto">Asunto de la consulta:</label>
-                    <select class="comboAsunto" name="asunto" id="asunto" widhrequired>
+                    <select class="comboAsunto" name="asunto" id="asunto">
+                        <option value="" style="display:none">Seleccione Opcion...</option>
                         <option value="1">Servicios</option>
                         <option value="2">Actividades</option>
                         <option value="3">Profesionales</option>
@@ -88,13 +89,13 @@
 
                 <label for="comentarios">Descripcion:</label>
                 <br>
-                <textarea class="comentariosContacto" name="comentarios" id="comentarios" required></textarea>
+                <textarea class="comentariosContacto" name="comentarios" id="comentarios"></textarea>
 
                 <br>
                 <br>
 
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Borrar">
+                <input type="button" id="enviar" value="Enviar">
+                <input type="reset" id="borrar" value="Borrar">
             </form>
 
         </section>
@@ -166,6 +167,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     </footer>
+    <script src="./js/contacto.js"></script>
 </body>
 
 </html>
