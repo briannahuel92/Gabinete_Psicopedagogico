@@ -12,7 +12,7 @@
     <title>Gabinete Psicopedagógico San Pablo - Contacto</title>
 </head>
 
-<body class="bodyContacto">
+<body class="Login">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-too">
             <div class="container">
@@ -66,88 +66,31 @@
     </header>
 
 
-    <main class="Contacto">
-        <section class="FormularioContacto">
+    <main>
+        <section class="FormularioLogin">
 
-            <h3>Formulario de contacto</h3>
-            <p>Para consultas, complete los campos y nos estaremos comunicando con usted para brindarle toda la
-                informacion,
-                Muchas Gracias!</p>
+            <h3>Iniciar Sesion</h3>
+            <p>Ingrese su usuario y password</p>
 
             <form action="">
-                <div class="formularioInputs">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
+                <div class="formularioInputsLogin">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="nombre" id="usuario" >
 
                     <br>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Ingrese su E-mail">
-
-                    <br>
-
-                    <label for="asunto">Asunto de la consulta:</label>
-                    <select class="comboAsunto" name="asunto" id="asunto">
-                        <option value="" style="display:none">Seleccione Opcion...</option>
-                        <option value="1">Servicios</option>
-                        <option value="2">Actividades</option>
-                        <option value="3">Profesionales</option>
-                        <option value="4">Postulaciones</option>
-                    </select>
+                    <label for="password">Password:</label>
+                    <input type="password" name="email" id="password" >
                 </div>
 
                 <br>
 
-                <label for="comentarios">Descripcion:</label>
-                <br>
-                <textarea class="comentariosContacto" name="comentarios" id="comentarios"></textarea>
-
-                <br>
-                <br>
-
-                <input type="button" id="enviar" value="Enviar">
-                <input type="reset" id="borrar" value="Borrar">
+                <input type="button" onclick="location.href='./administracion.html'" id="enviar" value="Iniciar sesion">
             </form>
 
         </section>
-
-        <section class="DirMapaContacto">
-            <h3 class="TituloUbicacion">¿Dónde nos encontramos?</h3>
-            <p class="DescMapaContacto">Nos encontramos en: 3 de Febrero 1444, Belgrano, CABA</p>
-            <p class="DescMapaContacto">Horarios: 9:00 AM - 20:00 PM</p>
-            <div class="ContenedorMapaContacto">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.7823180515613!2d-58.44794149671005!3d-34.565544360608854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca577585f2eb1%3A0x58f67fb0e51d69d0!2sSanatorio%20San%20Pablo!5e0!3m2!1ses-419!2sar!4v1696032526323!5m2!1ses-419!2sar"
-                    width="100%" height="400px" style="border:4;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-            <div class="DirMapaContactoNumeros">
-                <p class="DescMapaContacto">Telefono: 4555-4555</p>
-                <div class="DescWhassap">
-                    <a href="https://wa.me/+5491125668806" target="_blank"><img class="LogoWhassap"
-                            src="./img/whatsapp.png" alt=""></a>
-                    <p class="DescCelularContacto">15-2566-8806</p>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="RedSocialesContacto">
-            <h3 class="DescRedSocContacto">Visitanos en nuestras redes sociales!</h3>
-            <div class="ContenedorImgContacto">
-                <a href="https://www.facebook.com/hospgarrahan/?locale=es_LA" target="_blank"><img
-                        class="imgRedSocContacto" src="./img/facebook.png" alt=""></a>
-                <a href="https://www.instagram.com/hospgarrahan/?hl=es-la" target="_blank"><img
-                        class="imgRedSocContacto" src="./img/instagram.png" alt=""></a>
-                <a href="https://twitter.com/HospGarrahan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-                    target="_blank"><img class="imgRedSocContacto" src="./img/gorjeo.png" alt=""></a>
-            </div>
-
-        </section>
-
     </main>
+    
     <footer>
 
         <section class="footerMenu">
@@ -179,7 +122,6 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     </footer>
-    <script src="./js/contacto.js"></script>
 </body>
 
 </html>

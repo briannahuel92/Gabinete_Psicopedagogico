@@ -374,3 +374,72 @@ div.ContenedorImgContacto {
     height: 3em;
     width: 3em;
 }
+
+/*ESTILOS PAGINA DE LOGIN*/
+
+
+body.Login{
+    color:white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body.Login {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+    body.Login {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body.Login {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+body.Login header {
+    grid-area: headerGrid;
+}
+
+body.Login main {
+    grid-area: mainGrid;
+    text-align: center;
+}
+
+body.Login footer {
+    grid-area: footerGrid;
+}
+
+/*Formulario*/
+
+section.FormularioLogin {
+    grid-area: FormularioContacto;
+    padding: 25px;
+}
+
+.formularioInputsLogin label {
+    margin: 3px;
+    display: inline-block;
+    width: 170px;
+}
