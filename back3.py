@@ -172,6 +172,8 @@ class Personal:
 personal = Personal(host='localhost', user='root', password='', database='dbpersonal')
 
 # Borramos la tabla de profesionales
+''' INTENCIONALMENTE NO PONGO EL WHERE
+    BORRO TODA LA TABLA DE PROFESIONALES '''
 personal.cursor.execute("DELETE FROM profesionales")
 personal.conn.commit()
 
