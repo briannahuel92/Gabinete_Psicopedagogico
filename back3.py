@@ -169,7 +169,7 @@ class Personal:
 # -------------------------------------------------------------------
 # Ejemplo de uso de la clase Personal
 # -------------------------------------------------------------------
-personal = Personal(host='localhost', user='root', password='', database='dbpersonal')
+personal = Personal(host='localhost', user='root', password='root', database='dbpersonal')
 
 # Borramos la tabla de profesionales
 ''' INTENCIONALMENTE NO PONGO EL WHERE

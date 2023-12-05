@@ -9,11 +9,48 @@
     font-family: 'Arial', sans-serif;
 }
 
+body{
+    color:white;
+}
+
 /*Background*/
 
 body {
     background-color: rgb(104, 82, 49);
 }
+
+
+/*ESTILOS PAGINA DE LOGIN*/
+
+
+body.Login{
+    color:white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body.Login {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+    body.Login {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
 
 /*Header*/
 
@@ -442,4 +479,83 @@ section.FormularioLogin {
     margin: 3px;
     display: inline-block;
     width: 170px;
+}
+
+
+/*ESTILOS PAGINA DE PROFESIONAL*/
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body.PantallaProfesionales {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+    body.PantallaProfesionales {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body.PantallaProfesionales {
+        display: grid;
+        grid-template: 1fr 3fr 1fr/ 1fr;
+        grid-template-areas: 
+        "headerGrid"
+        "mainGrid"
+        "footerGrid";
+    }
+}
+
+body.PantallaProfesionales header {
+    grid-area: headerGrid;
+}
+
+body.PantallaProfesionales main {
+    grid-area: mainGrid;
+    text-align: center;
+}
+
+body.PantallaProfesionales footer {
+    grid-area: footerGrid;
+}
+
+.contenedor-centrado {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+table {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(104, 82, 49);
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+}
+
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
