@@ -19,7 +19,8 @@ def crea(codigo, especialidad):
     crea_dict.update({"apellido": api_dict["name"]["last"]})
     crea_dict.update({"matricula": 'MN-' + str(2000 + codigo)})
     crea_dict.update({"especialidad": especialidad})
-    crea_dict.update({"imagen": api_dict["picture"]["large"]})
+    crea_dict.update({"imagen": str( str( int(codigo) % 20 ) + '.jpg')})
+#    crea_dict.update({"imagen": api_dict["picture"]["large"]})
 
     return crea_dict
 

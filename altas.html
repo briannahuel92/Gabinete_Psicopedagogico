@@ -27,19 +27,19 @@
             <input type="text" id="codigo" name="codigo" required><br>
         -->
             <label for="Apellido">Apellido:</label>
-            <input type="text" id="descripcion" name="descripcion" required><br>
+            <input type="text" id="apellido" name="apellido" required><br>
 
             <label for="Nombre">Nombre:</label>
-            <input type="text" id="cantidad" name="cantidad" required><br>
+            <input type="text" id="nombre" name="nombre" required><br>
 
             <label for="Especialidad">Especialidad:</label>
-            <input type="text" step="0.01" id="precio" name="precio" required><br>
+            <input type="text" id="especialidad" name="especialidad" required><br>
 
             <label for="Matricula">Matricula:</label>
-            <input type="text" step="0.01" id="precio" name="precio" required><br>
+            <input type="text" id="matricula" name="matricula" required><br>
             <br>
-            <label for="imagenProducto">Imagen del producto:</label>
-            <input type="file" id="imagenProducto" name="imagen">
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen">
             <br>
             <br>
             <button class="btnProfesionalModAlta" type="submit">Agregar Producto</button>
@@ -67,8 +67,8 @@
             formData.append('nombre', document.getElementById('nombre').value);
             formData.append('especialidad', document.getElementById('especialidad').value);
             formData.append('matricula', document.getElementById('matricula').value);
-            formData.append('imagen', document.getElementById('imagenProducto').files[0]);
-            formData.append('proveedor', document.getElementById('proveedorProducto').value);
+            formData.append('imagen', document.getElementById('imagen').files[0]);
+        //    formData.append('proveedor', document.getElementById('proveedorProducto').value);
 
             // Realizamos la solicitud POST al servidor. El método POST se usa para enviar y crear nuevos datos en el servidor.
             fetch(URL + 'profesionales', {
@@ -104,7 +104,7 @@
                     document.getElementById('apellido').value = "";
                     document.getElementById('nombre').value = "";
                     document.getElementById('especialidad').value = "";
-                    document.getElementById('imagenProducto').value = "";
+                    document.getElementById('imagen').value = "";
                     document.getElementById('matricula').value = "";
                 });
         })
