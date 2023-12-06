@@ -13,62 +13,18 @@
 </head>
 
 <body class="PantallaProfesionales">
+
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-too">
-            <div class="container">
-
-                <div class="iconoConsultorio">
-                    <img src="./img/icono.png" class="img-fluid" alt="">
-                </div>
-                
-                <div class="logoytitulo">
-                    <a href="#" class="navbar-brand"><span class="text-primary"></span>Gabinete
-                        Psicopedagógico</a>
-                    <h5>San Pablo</h5>
-                </div>
-
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                    aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarS">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a href="./login.html" class="nav-link">Iniciar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link">Quienes somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index.html#Servicios" class="nav-link">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index.html#PruebasRealizadas" class="nav-link">Pruebas Realizadas en el
-                                Centro</a>
-                        </li>
-                        <!--<li class="nav-item">
-                            <a href="#" class="nav-link">Integracion</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a href="./profesionales.html" class="nav-link">Nuestros Profesionales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./contacto.html" class="nav-link">Contacto</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-
-        </nav>
     </header>
 
 
     <main>
         <h1>Listado de Profesionales</h1>
-        <input type="button" onclick="location.href='./altas.html'" id="enviar" value=" Agregar ">
+
+        <div id="botonAgregar">
+            <input v-if = "islog" type="button" onclick="location.href='./altas.html'" id="enviar" value=" Agregar ">
+        </div>
+        
         <br>
         <br>
         <table> <!-- Se crea una tabla para mostrar los productos. -->
@@ -86,14 +42,23 @@
             </thead>
             <tbody id="tablaProductos"> </tbody>
         </table>
-    
+
+        <script src="https://unpkg.com/vue@next"></script>
         <script>
+
+            const ejemplo1 = Vue.createApp({
+                data(){
+                    return{
+                        islog: sessionStorage.getItem('isLogged') == "si"
+                    }
+                }
+            }).mount("#botonAgregar");
+
             const URL = "http://127.0.0.1:5000/"
     
             // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
             //const URL = "https://USUARIO.pythonanywhere.com/"
-            
-    
+
             // Realizamos la solicitud GET al servidor para obtener todos los productos.
             fetch(URL + 'profesionales')
                 .then(function (response) {
@@ -121,12 +86,12 @@
                             // Mostrar miniatura de la imagen
                             '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>'
 
-                            //if (sessionStorage.getItem('esAdministrador') == 'no')
-                            //{
-                                fila.innerHTML =  fila.innerHTML  + 
-                                '<td><input id=\"Button\" type=\"button\"  onclick=\"location.href=\'./modificaciones.html\'\" value=\" Modificar \" /></td>' +
-                                '<td><input id=\"Button\" type=\"button\" value=\" Eliminar \" /></td>'
-                            //}
+                            if (sessionStorage.getItem('isLogged') == 'si')
+                            {
+                              fila.innerHTML =  fila.innerHTML  + 
+                              '<td><input id=\"Button\" type=\"button\"  onclick=\"location.href=\'./modificaciones.html\'\" value=\" Modificar \" /></td>' +
+                              '<td><input id=\"Button\" type=\"button\" value=\" Eliminar \" /></td>'
+                            }
 
                             //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
                             //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
@@ -141,40 +106,20 @@
                     // Código para manejar errores
                     alert('Error al obtener los productos.');
                 });
+
         </script>
     </main>
     
     <footer>
-
-        <section class="footerMenu">
-            <ul>
-                <li><a href="./login.html">Iniciar Sesion</a></li>
-                <li><a href="./index.html">Quienes somos</a></li>
-                <li><a href="./index.html#Servicios">Servicios</a></li>
-                <li><a href="./index.html#PruebasRealizadas">Pruebas Realizadas en el Centro</a></li>
-                <li><a href="./profesionales.html">Nuestros Profesionales</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
-        </section>
-
-        <section class="footerContacto">
-            <h6>Contacto</h6>
-            <p>3 de Febrero 1444, Belgrano, CABA</p>
-            <p>Horarios: 9:00 AM - 20:00 PM</p>
-            <p> Telefono: 4555-4555 Whatsapp: 15-2566-8806</p>
-            <a href="./contacto.html#FormularioContacto">Realizar una consulta</a>
-        </section>
-
-        <section class="footerPagRedes">
-
-            <div class="iconoConsultorioFooter"><img src="./img/icono.png" class="img-fluid" alt=""></div>
-            <h6>Consultorio Psicopedagógico San Pablo</h6>
-        </section>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/login.js"></script>
+
 </body>
 
 </html>
