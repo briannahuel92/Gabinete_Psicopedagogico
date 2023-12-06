@@ -70,9 +70,9 @@
 
         <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
         <form id="formularioAlta" enctype="multipart/form-data">
-            <label for="codigo">Código:</label>
+        <!--    <label for="codigo">Código:</label>
             <input type="text" id="codigo" name="codigo" required><br>
-
+        -->
             <label for="Apellido">Apellido:</label>
             <input type="text" id="descripcion" name="descripcion" required><br>
 
@@ -108,7 +108,8 @@
             event.preventDefault(); // Evitamos que se envie el form 
 
             var formData = new FormData();
-            formData.append('codigo', document.getElementById('codigo').value);
+        //    formData.append('codigo', document.getElementById('codigo').value);
+            formData.append('codigo', "1");
             formData.append('apellido', document.getElementById('apellido').value);
             formData.append('nombre', document.getElementById('nombre').value);
             formData.append('especialidad', document.getElementById('especialidad').value);
@@ -146,7 +147,7 @@
 
                 // Limpiar el formulario en ambos casos (éxito o error)
                 .finally(function () {
-                    document.getElementById('codigo').value = "";
+                //    document.getElementById('codigo').value = "";
                     document.getElementById('apellido').value = "";
                     document.getElementById('nombre').value = "";
                     document.getElementById('especialidad').value = "";

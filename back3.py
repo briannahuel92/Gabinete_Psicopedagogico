@@ -169,7 +169,7 @@ class Personal:
 # -------------------------------------------------------------------
 # Ejemplo de uso de la clase Personal
 # -------------------------------------------------------------------
-personal = Personal(host='localhost', user='root', password='root', database='dbpersonal')
+personal = Personal(host='localhost', user='root', password='', database='dbpersonal')
 
 # Borramos la tabla de profesionales
 ''' INTENCIONALMENTE NO PONGO EL WHERE
@@ -182,11 +182,11 @@ personal.conn.commit()
 # Psicopedagoga
 
 personal.agregar_profesional(1, 'Ana', 'Alpha', 'MN-1001', 'Fonoaudiologa', '1.jpg')
-personal.agregar_profesional(2, 'Beatriz', 'Bravo', 'MN-2002', 'Fonoaudiologa', '2.jpg')
-personal.agregar_profesional(3, 'Clara', 'Charlie', 'MN-3003', 'Psicologa', '3.jpg')
-# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicologa'))
-# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
-# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
+personal.agregar_profesional(2, 'Beatriz', 'Bravo', 'MN-1002', 'Psicologa', '2.jpg')
+personal.agregar_profesional(3, 'Clara', 'Charlie', 'MN-1003', 'Psicopedagoga', '3.jpg')
+personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Fonoaudiologa'))
+personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicologa'))
+personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
 
 @app.route("/profesionales", methods=["GET"]) #GET: método para obtener respuestas a nuestras peticiones.
 def listar_profesionales():
