@@ -14,7 +14,7 @@
 </head>
 
 <body class="PantallaProfesionales">
-    <header >
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-too">
             <div class="container">
 
@@ -72,27 +72,27 @@
         <form id="formularioAlta" enctype="multipart/form-data">
             <label for="codigo">Código:</label>
             <input type="text" id="codigo" name="codigo" required><br>
-    
-            <label for="descripcion">Descripción:</label>
+
+            <label for="Apellido">Apellido:</label>
             <input type="text" id="descripcion" name="descripcion" required><br>
-    
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" required><br>
-    
-            <label for="precio">Precio:</label>
-            <input type="number" step="0.01" id="precio" name="precio" required><br>
-    
+
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="cantidad" name="cantidad" required><br>
+
+            <label for="Especialidad">Especialidad:</label>
+            <input type="text" step="0.01" id="precio" name="precio" required><br>
+
+            <label for="Matricula">Matricula:</label>
+            <input type="text" step="0.01" id="precio" name="precio" required><br>
+            <br>
             <label for="imagenProducto">Imagen del producto:</label>
             <input type="file" id="imagenProducto" name="imagen">
-    
-            <br><br>
-            <label for="proveedorProducto">Proveedor:</label>
-            <input type="text" id="proveedorProducto" name="proveedor">
-    
-            <button type="submit">Agregar Producto</button>
-            <a href="index.html">Menu principal</a>
+            <br>
+            <br>
+            <button class="btnProfesionalModAlta" type="submit">Agregar Producto</button>
+            <a class="btnProfesionalModAlta" href="./profesionales.html">Volver</a>
         </form>
-        
+
     </main>
 
 
@@ -104,19 +104,20 @@
 
 
         // Capturamos el evento de envío del formulario
-        document.getElementById('formulario').addEventListener('submit', function (event) {
+        document.getElementById('formularioAlta').addEventListener('submit', function (event) {
             event.preventDefault(); // Evitamos que se envie el form 
 
             var formData = new FormData();
             formData.append('codigo', document.getElementById('codigo').value);
-            formData.append('descripcion', document.getElementById('descripcion').value);
-            formData.append('cantidad', document.getElementById('cantidad').value);
-            formData.append('precio', document.getElementById('precio').value);
+            formData.append('apellido', document.getElementById('apellido').value);
+            formData.append('nombre', document.getElementById('nombre').value);
+            formData.append('especialidad', document.getElementById('especialidad').value);
+            formData.append('matricula', document.getElementById('matricula').value);
             formData.append('imagen', document.getElementById('imagenProducto').files[0]);
             formData.append('proveedor', document.getElementById('proveedorProducto').value);
 
             // Realizamos la solicitud POST al servidor. El método POST se usa para enviar y crear nuevos datos en el servidor.
-            fetch(URL + 'productos', {
+            fetch(URL + 'profesionales', {
                 method: 'POST',
                 body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
             })
@@ -129,28 +130,28 @@
                     } else {
                         // Si hubo un error, lanzar explícitamente una excepción
                         // para ser "catcheada" más adelante
-                        throw new Error('Error al agregar el producto.');
+                        throw new Error('Error al agregar el profesional.');
                     }
                 })
 
                 //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
                 .then(function (data) {
-                    alert('Producto agregado correctamente.');
+                    alert('profesional agregado correctamente.');
                 })
 
                 // En caso de error, mostramos una alerta con un mensaje de error.
                 .catch(function (error) {
-                    alert('Error al agregar el producto.');
+                    alert('Error al agregar el profesional.');
                 })
 
                 // Limpiar el formulario en ambos casos (éxito o error)
                 .finally(function () {
                     document.getElementById('codigo').value = "";
-                    document.getElementById('descripcion').value = "";
-                    document.getElementById('cantidad').value = "";
-                    document.getElementById('precio').value = "";
+                    document.getElementById('apellido').value = "";
+                    document.getElementById('nombre').value = "";
+                    document.getElementById('especialidad').value = "";
                     document.getElementById('imagenProducto').value = "";
-                    document.getElementById('proveedorProducto').value = "";
+                    document.getElementById('matricula').value = "";
                 });
         })
     </script>

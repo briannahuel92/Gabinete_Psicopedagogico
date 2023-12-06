@@ -72,7 +72,7 @@
             <h3>Iniciar Sesion</h3>
             <p>Ingrese su usuario y password</p>
 
-            <form action="">
+            <form id="formularioLogin"  enctype="multipart/form-data">
                 <div class="formularioInputsLogin">
                     <label for="usuario">Usuario:</label>
                     <input type="text" name="nombre" id="usuario" >
@@ -84,11 +84,32 @@
                 </div>
 
                 <br>
-
-                <input type="button" onclick="location.href='./index.html'" id="enviar" value="Iniciar sesion">
+                <button class="btnLogin" type="submit">Iniciar sesion</button>
             </form>
 
         </section>
+
+        <script>
+        // document.getElementById('formularioLogin').addEventListener('submit', function (event) {
+        //    event.preventDefault(); // Evitamos que se envie el form 
+        //    
+        //    let user;
+        //    let pass;
+        //    user = document.getElementById('usuario').value;
+        //    pass = document.getElementById('password').value;
+//
+        //    if (user == 'admin' && pass == '123456')
+        //    {
+        //        sessionStorage.setItem('esAdministrador', 'si')
+        //        location.href ="./index.html"
+        //    }
+        //    else
+        //    {
+        //        sessionStorage.setItem('esAdministrador', 'no')
+        //    }
+        //    
+        // })
+        //</script>
     </main>
     
     <footer>

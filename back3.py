@@ -181,12 +181,12 @@ personal.conn.commit()
 # Psicologa
 # Psicopedagoga
 
-personal.agregar_profesional(1, 'Ana', 'Alpha', 'MN-1001', 'Fonoaudiologa', '101.jpg')
-personal.agregar_profesional(2, 'Beatriz', 'Bravo', 'MN-2002', 'Fonoaudiologa', '102.jpg')
-personal.agregar_profesional(3, 'Clara', 'Charlie', 'MN-3003', 'Psicologa', '103.jpg')
-personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicologa'))
-personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
-personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
+personal.agregar_profesional(1, 'Ana', 'Alpha', 'MN-1001', 'Fonoaudiologa', '1.jpg')
+personal.agregar_profesional(2, 'Beatriz', 'Bravo', 'MN-2002', 'Fonoaudiologa', '2.jpg')
+personal.agregar_profesional(3, 'Clara', 'Charlie', 'MN-3003', 'Psicologa', '3.jpg')
+# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicologa'))
+# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
+# personal.agregar_profesional(**cPR3Crea(Personal._codigo_siguiente, 'Psicopedagoga'))
 
 @app.route("/profesionales", methods=["GET"]) #GET: método para obtener respuestas a nuestras peticiones.
 def listar_profesionales():

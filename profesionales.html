@@ -68,7 +68,7 @@
 
     <main>
         <h1>Listado de Profesionales</h1>
-        <input type="button" onclick="location.href='./altas.html'" id="enviar" value="Agregar">
+        <input type="button" onclick="location.href='./altas.html'" id="enviar" value=" Agregar ">
         <br>
         <br>
         <table> <!-- Se crea una tabla para mostrar los productos. -->
@@ -119,9 +119,15 @@
                             '<td align="right">' + producto.especialidad + '</td>' +
                             '<td align="right">' + producto.matricula + '</td>' +
                             // Mostrar miniatura de la imagen
-                            '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>'+
-                            '<td><input id=\"Button\" type=\"button\"  onclick=\"location.href=\'./modificaciones.html\'\" value=\"Modificar\" /></td>'+
-                            '<td><input id=\"Button\" type=\"button\" value=\"Eliminar\" /></td>'
+                            '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>'
+
+                            //if (sessionStorage.getItem('esAdministrador') == 'no')
+                            //{
+                                fila.innerHTML =  fila.innerHTML  + 
+                                '<td><input id=\"Button\" type=\"button\"  onclick=\"location.href=\'./modificaciones.html\'\" value=\" Modificar \" /></td>' +
+                                '<td><input id=\"Button\" type=\"button\" value=\" Eliminar \" /></td>'
+                            //}
+
                             //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
                             //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
                         

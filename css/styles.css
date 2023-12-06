@@ -20,6 +20,12 @@ body {
 }
 
 
+label {
+    margin: 3px;
+    display: inline-block;
+    width: 170px;
+}
+
 /*ESTILOS PAGINA DE LOGIN*/
 
 
@@ -550,12 +556,25 @@ table {
     border-radius: 5px;
 }
 
+table td{
 
-input[type="submit"] {
-    padding: 10px;
-    background-color: #007bff;
+    padding: 0px 10px 0px 15px;
+    border-width: 2px;
+
+}
+
+.btnProfesionalModAlta {
+    padding: 8px;
+    margin:4px;
+    background-color: #2b2453;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 85%;
+}
+
+.btnProfesionalModAlta:hover {
+    background-color: #cd7b00;
 }
