@@ -84,13 +84,25 @@
                             '<td align="right">' + producto.especialidad + '</td>' +
                             '<td align="right">' + producto.matricula + '</td>' +
                             // Mostrar miniatura de la imagen
-                            '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>'
+                            '<td><img src=./static/imagenes/' + producto.imagen_url +' alt="Imagen del profesional" style="width: 100px;"></td>'
 
                             if (sessionStorage.getItem('isLogged') == 'si')
                             {
-                              fila.innerHTML =  fila.innerHTML  + 
-                              '<td><input id=\"Button\" type=\"button\"  onclick=\"location.href=\'./modificaciones.html\'\" value=\" Modificar \" /></td>' +
-                              '<td><input id=\"Button\" type=\"button\" value=\" Eliminar \" /></td>'
+                                modifStr = '<td><a href="./modificaciones.html?codigo='
+                                modifStr += `${producto.codigo}"><input type="button"`
+                                modifStr += ' value=" Modificar "/></a></td>'
+
+                                fila.insertAdjacentHTML('beforeend', modifStr)
+ // <a href="delete.php?id=22" onclick="return confirm('Are you sure?')">Link</a>
+ //                               modifStr = '<td><a href="./modificaciones.html?codigo='
+ //                               modifStr += `${producto.codigo}"><input type="button"`
+ //                               modifStr += ' value=" Modificar "/></a></td>'
+
+                                modifStr = '<td><input id="Button" type="button"'
+                                modifStr += ' value=" Eliminar " /></td>'
+
+                                fila.insertAdjacentHTML('beforeend', modifStr)
+
                             }
 
                             //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere

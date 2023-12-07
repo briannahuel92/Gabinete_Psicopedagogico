@@ -240,31 +240,42 @@ def agregar_profesional():
 
     print("Por Agregar: ", nombre, apellido, matricula, especialidad, imagen)
 
+    '''
     # Me aseguro que el producto exista
     profesional = personal.consultar_profesional(codigo)
     if not profesional: # Si no existe el profesional...
-        # Genero el nombre de la imagen
-        nombre_imagen = secure_filename(imagen.filename) #Chequea el nombre del archivo de la imagen, asegurándose de que sea seguro para guardar en el sistema de archivos
-        nombre_base, extension = os.path.splitext(nombre_imagen) #Separa el nombre del archivo de su extensión.
-        nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}" #Genera un nuevo nombre para la imagen usando un timestamp, para evitar sobreescrituras y conflictos de nombres.
-        
-        #Se agrega el profesional a la base de datos
-        print("Nuevo Profesional no encontrado, Intento Agregar.")
-        if personal.agregar_profesional(codigo, nombre, apellido,
-            matricula, especialidad, imagen):
-            print("Agregar Profesional devolvio TRUE.")
-            imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
+    '''
+    # Genero el nombre de la imagen
+    nombre_imagen = secure_filename(imagen.filename)
+    #Chequea el nombre del archivo de la imagen, asegurándose
+    #de que sea seguro para guardar en el sistema de archivos
+    
+    nombre_base, extension = os.path.splitext(nombre_imagen)
+    #Separa el nombre del archivo de su extensión.
+    
+    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+    #Genera un nuevo nombre para la imagen usando un timestamp,
+    # para evitar sobreescrituras y conflictos de nombres.
+    
+    #Se agrega el profesional a la base de datos
+    print("Nuevo Profesional no encontrado, Intento Agregar.")
+    if personal.agregar_profesional(codigo, nombre, apellido,
+        matricula, especialidad, nombre_imagen):
+        print("Agregar Profesional devolvio TRUE.")
+        imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
 
-            #Si el profesional se agrega con éxito, se devuelve una respuesta JSON con un mensaje de éxito y un código de estado HTTP 201 (Creado).
-            return jsonify({"mensaje": "Profesional agregado correctamente.", "imagen": nombre_imagen}), 201
-        else:
-            #Si el profesional no se puede agregar, se devuelve una respuesta JSON con un mensaje de error y un código de estado HTTP 500 (Internal Server Error).
-            return jsonify({"mensaje": "Error al agregar el profesional."}), 500
-
+        #Si el profesional se agrega con éxito, se devuelve una respuesta JSON
+        # con un mensaje de éxito y un código de estado HTTP 201 (Creado).
+        return jsonify({"mensaje": "Profesional agregado correctamente.", "imagen": nombre_imagen}), 201
+    else:
+        #Si el profesional no se puede agregar, se devuelve una respuesta JSON
+        # con un mensaje de error y un código de estado HTTP 500 (Internal Server Error).
+        return jsonify({"mensaje": "Error al agregar el profesional."}), 500
+'''
     else:
         #Si el profesional ya existe (basado en el código), se devuelve una respuesta JSON con un mensaje de error y un código de estado HTTP 400 (Solicitud Incorrecta).
         return jsonify({"mensaje": "Profesional ya existe."}), 400
-
+'''
 
 #--------------------------------------------------------------------
 # Modificar un profesional según su código
